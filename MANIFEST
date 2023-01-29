@@ -1,0 +1,2 @@
+REPO monk-strapi
+LOAD strapi.yaml stack.yaml

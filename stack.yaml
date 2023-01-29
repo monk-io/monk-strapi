@@ -1,0 +1,9 @@
+namespace: strapi
+
+stack:
+  defines: process-group
+  runnable-list:
+    - strapi/strapi
+  variables:
+    strapi-image-tag: latest
+    strapi-port: 5601

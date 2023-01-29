@@ -1,0 +1,37 @@
+namespace: strapi
+
+
+strapi:
+  defines: runnable
+  services:
+    strapi:
+      container: strapi
+      port: <- `${port}`
+      protocol: tcp
+      host-port: <- `${port}` to-i
+  metadata:
+    defines: metadata
+    name: strapi
+    description: Strapi is the next-gen headless CMS, open-source, javascript, enabling content-rich experiences to be created, managed and exposed to any digital device.
+    tags: self hosted, Content Management System
+    website: https://strapi.io/
+    source: https://github.com/strapi/strapi
+    publisher: "monk.io"
+    icon: 
+  containers:
+    defines: containers
+    strapi:
+      image: strapi/strapi
+      image-tag: <- `${strapi-image}`
+      ports:
+      - <- `${port}:${port}`
+      paths:
+        - <- `${monk-volume-path}/strapi/data:/srv/app`      
+  variables:
+    defines: variables
+    strapi-image:
+      value: <- $strapi-image-tag
+      type: string
+    port:
+      value: <- $strapi-port
+      type: int               
