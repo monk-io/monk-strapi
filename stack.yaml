@@ -6,4 +6,4 @@ stack:
     - strapi/strapi
   variables:
     strapi-image-tag: latest
-    strapi-port: 5601
+    strapi-port: 1337
