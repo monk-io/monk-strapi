@@ -5,5 +5,5 @@ stack:
   runnable-list:
     - strapi/strapi
   variables:
-    strapi-image-tag: latest
+    strapi-image-tag: 3.6.8
     strapi-port: 1337

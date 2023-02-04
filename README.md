@@ -31,7 +31,7 @@ The current variables can be found in `strapi/variables` section
 
 ```yaml
   variables:
-    strapi-image-tag: latest
+    strapi-image-tag: 3.6.8
     strapi-port: 1337
 ```
 
@@ -40,7 +40,7 @@ The current variables can be found in `strapi/variables` section
 | Variable | Description | Type | Example |
 |----------|-------------|------|---------|
 | **strapi-port** | Elasticsearch port that will accept requests | int | 1337
-| **strapi-image-tag** | Strapi image version. | string | latest |
+| **strapi-image-tag** | Strapi image version. | string | 3.6.8 |
 
 
 
