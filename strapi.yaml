@@ -1,37 +1,42 @@
+---
 namespace: strapi
 
+base:
+  defines: runnable
+  metadata:
+    name: Strapi
+    description: Strapi is the next-gen headless CMS, open-source, javascript, enabling content-rich experiences to be created, managed and exposed to any digital device.
+    tags: Strapi CMS, Content Management System, Node.js, Headless CMS, API-driven CMS, Web Development, Open Source, Backend Development, GraphQL, REST API, Database, User Authentication, Customizable, Scalable, Modular
+    website: https://strapi.io/
+    source: https://github.com/strapi/strapi
+    publisher: monk.io
+    icon: https://camo.githubusercontent.com/7b181416931b19e4f5c19a139a9f8609621f9b8350f266f543bf19f93c7bf219/68747470733a2f2f7374726170692e696f2f6173736574732f7374726170692d6c6f676f2d6c696768742e737667
+    private: true
+  containers:
+    strapi:
+      image: strapi/strapi
+      image-tag: latest
 
 strapi:
   defines: runnable
+  inherits: strapi/base
+  metadata:
+    private: false
+  containers:
+    strapi:
+      paths:
+        - <- `${monk-volume-path}/strapi/data:/srv/app`
+      image-tag: <- `${strapi-image}`
   services:
     strapi:
       container: strapi
       port: <- `${port}`
       protocol: tcp
-      host-port: <- `${port}` to-i
-  metadata:
-    defines: metadata
-    name: strapi
-    description: Strapi is the next-gen headless CMS, open-source, javascript, enabling content-rich experiences to be created, managed and exposed to any digital device.
-    tags: self hosted, Content Management System
-    website: https://strapi.io/
-    source: https://github.com/strapi/strapi
-    publisher: "monk.io"
-    icon: 
-  containers:
-    defines: containers
-    strapi:
-      image: strapi/strapi
-      image-tag: <- `${strapi-image}`
-      ports:
-      - <- `${port}:${port}`
-      paths:
-        - <- `${monk-volume-path}/strapi/data:/srv/app`      
+      host-port: <- `${port}`
   variables:
-    defines: variables
     strapi-image:
-      value: <- $strapi-image-tag
+      value: 3.6.8
       type: string
     port:
-      value: <- $strapi-port
-      type: int               
+      value: 1337
+      type: int

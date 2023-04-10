@@ -4,7 +4,7 @@ This repository contains Monk.io template to deploy Strapi system either locally
 
 ## Start
 
-Set up Monk - https://docs.monk.io/docs/monk-in-10/
+Set up Monk - [https://docs.monk.io/docs/monk-in-10/](https://docs.monk.io/docs/monk-in-10/)
 
 Start `monkd` and login.
 
@@ -14,7 +14,8 @@ monk login --email=<email> --password=<password>
 
 ## Clone Monk Strapi repository
 
-In order to load templates and change configuration simply use below commands: 
+In order to load templates and change configuration simply use below commands:
+
 ```bash
 git clone https://github.com/monk-io/monk-strapi
 
@@ -35,38 +36,37 @@ The current variables can be found in `strapi/variables` section
     strapi-port: 1337
 ```
 
-##  Template variables
+## Template variables
 
-| Variable | Description | Type | Example |
-|----------|-------------|------|---------|
-| **strapi-port** | Elasticsearch port that will accept requests | int | 1337
-| **strapi-image-tag** | Strapi image version. | string | 3.6.8 |
-
-
+| Variable        | Description                                  | Type   | Example |
+| --------------- | -------------------------------------------- | ------ | ------- |
+| **strapi-port** | Elasticsearch port that will accept requests | int    | 1337    |
+| **port**        | Strapi image version.                        | string | 3.6.8   |
 
 ## Local Deployment
 
-First clone the repository simply run below command after launching `monkd`:
-:
+| First clone the repository simply run below command after launching `monkd`: |
+| :--------------------------------------------------------------------------: |
 
 ```bash
 ➜  monk load MANIFEST
 
+✔ Read files successfully
+✔ Loaded strapi.yaml successfully
+
+Loaded 2 runnables, 0 process groups, 0 services, 0 entities and 0 entity instances
 ✨ Loaded:
- ├─🔩 Runnables:
- │  └─🧩 strapi/strapi
- ├─🔗 Process groups:
- │  └─🧩 strapi/stack
- └─⚙️ Entity instances:
-    └─🧩 strapi/strapi/metadata
+ └─🔩 Runnables:
+    ├─🧩 strapi/base
+    └─🧩 strapi/strapi
 ✔ All templates loaded successfully
 
 ➜  monk list -l strapi
 
 ✔ Got the list
 Type      Template       Repository  Version  Tags
-group     strapi/stack   local       -        -
-runnable  strapi/strapi  local       -        self hosted, Content Management System
+runnable  strapi/base    local       -        Strapi CMS, Content Management System, Node.js, Headless CMS, API-driven CMS, Web Development, Open Source, Backend Development, GraphQL, REST API, Database, User Authentication, Customizable, Scalable, Modular
+runnable  strapi/strapi  local       -        Strapi CMS, Content Management System, Node.js, Headless CMS, API-driven CMS, Web Development, Open Source, Backend Development, GraphQL, REST API, Database, User Authentication, Customizable, Scalable, Modular
 
 
 ➜  monk run --local-only strapi/stack
@@ -76,7 +76,6 @@ runnable  strapi/strapi  local       -        self hosted, Content Management Sy
 ```
 
 This will start the entire strapi/stack.
-
 
 ## Cloud Deployment
 
@@ -119,6 +118,7 @@ Your cluster has been created successfully.
 ```
 
 Once cluster is ready execute the same command as for local and select your cluster (the option will appear automatically).
+
 ```bash
 ➜  monk load MANIFEST
 
@@ -159,7 +159,7 @@ runnable  strapi/strapi  local       -        self hosted, Content Management Sy
 ## Stop, remove and clean up workloads and templates
 
 ```bash
-➜ monk purge  --ii --rv --rs --no-confirm --rv --r strapi/strapi strapi/stack 
+➜ monk purge  --ii --rv --rs --no-confirm --rv --r strapi/strapi strapi/stack
 
 ✔ strapi/strapi purged
 ✔ strapi/stack purged
