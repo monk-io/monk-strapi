@@ -6,7 +6,7 @@ base:
   metadata:
     name: Strapi
     description: Strapi is the next-gen headless CMS, open-source, javascript, enabling content-rich experiences to be created, managed and exposed to any digital device.
-    tags: Strapi CMS, Content Management System, Node.js, Headless CMS, API-driven CMS, Web Development, Open Source, Backend Development, GraphQL, REST API, Database, User Authentication, Customizable, Scalable, Modular
+    tags: headless cms, customizable, scalable, modular, user authentication, strapi cms, node.js, graphql, api-driven cms, rest api, database, open source
     website: https://strapi.io/
     source: https://github.com/strapi/strapi
     publisher: monk.io
